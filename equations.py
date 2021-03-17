@@ -1,11 +1,11 @@
 def XtimesY(x,y):
     if x<=0:
-        return 0
-    w=exp(y*ln(x))
+        return 0.0
+    w=exponent(y*Ln(x))
     return float(w)
 
 
-def exp(x):
+def exponent(x):
     i=1
     e_x=x
     calc=x
@@ -19,30 +19,26 @@ def exp(x):
     return float(e_x)
 
 
-def ln(x):
+def Ln(x):
+    if x<=0:
+        return 0.0
     yn=0
     i=0
     while i<1000:
-        yn=yn+2*(x-exp(yn))/(x+exp(yn))
+        yn=yn+2*(x-exponent(yn))/(x+exponent(yn))
         i=i+1
     return float(yn)
 
 def sqrt(x, y):
+    if y<=0 or x==0:
+        return 0.0
     x=1/x
     res=XtimesY(y, x)
     return float(res)
 
 
 def calculate(x):
-   calcul=exp(x)*XtimesY(7, x)*XtimesY(x, -1)*sqrt(x, x)
+   if x<=0:
+        return 0.0
+   calcul=exponent(x)*XtimesY(7, x)*XtimesY(x, -1)*sqrt(x, x)
    return calcul
-
-print(calculate(float(input(''))))
-
-    
-    
-    
-    
-    
-    
-    
