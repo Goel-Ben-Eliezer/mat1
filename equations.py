@@ -2,7 +2,7 @@ def XtimesY(x,y):
     if x<=0:
         return 0.0
     w=exponent(y*Ln(x))
-    return float(w)
+    return w
 
 
 def exponent(x):
@@ -16,7 +16,7 @@ def exponent(x):
         e_x=e_x+calc/(a)
         i=i+1
     e_x=e_x+1      
-    return float(e_x)
+    return e_x
 
 
 def Ln(x):
@@ -27,14 +27,14 @@ def Ln(x):
     while i<1000:
         yn=yn+2*(x-exponent(yn))/(x+exponent(yn))
         i=i+1
-    return float(yn)
+    return yn
 
 def sqrt(x, y):
     if y<=0 or x==0:
         return 0.0
     x=1/x
     res=XtimesY(y, x)
-    return float(res)
+    return res
 
 
 def calculate(x):
